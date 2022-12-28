@@ -2,6 +2,9 @@
 def start(update, context): = "Phyton_ChatGPT_Bot-Telegramm"; 
 updater.start_polling();
 ``` 
+![alt text][logo] 
+ 
+[logo]:https://github.com/DeepCoreB4/Phyton_ChatGPT_Bot-Telegramm/blob/master/microBot.jpg "MicroBot DeepCore"
 # ChatGPT on Telegram
 ChatGPT is a chatbot that uses the OpenAI GPT-3 language model to generate human-like responses to user messages. It has been integrated with the Telegram messaging platform, allowing users to chat with ChatGPT through their Telegram app or on the web.
 
