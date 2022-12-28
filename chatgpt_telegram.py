@@ -48,15 +48,14 @@ dispatcher.add_handler(start_handler)
 chat_handler = MessageHandler(Filters.text, chat)
 dispatcher.add_handler(chat_handler)
 
-updater.start_polling()
-
-
-
 # Error-Handler hinzufügen
 dispatcher.add_error_handler(error)
 
-# Den Bot starten
-updater.start_polling()
+try:
+    # Den Bot starten
+    updater.start_polling()
 
-# Auf Cleanup-Interrupts reagieren (z.B. STRG+C oder SIGTERM)
-updater.idle()
+    # Auf Cleanup-Interrupts reagieren (z.B. STRG+C oder SIGTERM)
+    updater.idle()
+except Exception as e:
+    print("An error occurred:", e)
