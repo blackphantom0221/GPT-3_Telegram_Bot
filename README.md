@@ -12,3 +12,7 @@ To start chatting with ChatGPT, simply send it a message and it will respond wit
 
 ### Disclaimer
 Please note that ChatGPT is a chatbot and is not a human. Its responses are generated using advanced artificial intelligence algorithms, but it may not always produce responses that are accurate, appropriate, or sensitive to your individual circumstances. Use ChatGPT at your own risk, and always use common sense and good judgment when interacting with it or any other chatbot.
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).
