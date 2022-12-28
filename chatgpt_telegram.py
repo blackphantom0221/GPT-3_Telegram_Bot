@@ -34,6 +34,10 @@ def chat(update, context):
     response = generate_response(text)
     update.message.reply_text(response)
 
+def error(update, context):
+    """Log Errors caused by Updates."""
+    logger.warning('Update "%s" caused error "%s"', update, context.error)
+    
 # Telegram-Bot starten und Nachrichten verarbeiten
 updater = Updater("5831906865:AAEhPBs9SoYTbNjUri2vop8I1rsI12skgOI", use_context=True)
 dispatcher = updater.dispatcher
@@ -46,9 +50,7 @@ dispatcher.add_handler(chat_handler)
 
 updater.start_polling()
 
-def error(update, context):
-    """Log Errors caused by Updates."""
-    logger.warning('Update "%s" caused error "%s"', update, context.error)
+
 
 # Error-Handler hinzufügen
 dispatcher.add_error_handler(error)
