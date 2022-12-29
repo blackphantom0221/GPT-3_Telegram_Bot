@@ -2,12 +2,21 @@ import openai
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
+from dotenv import load_dotenv
+import os
+
+# Lädt die Umgebungsvariablen aus der .env-Datei
+load_dotenv()
+
+# Verwendet den Wert der Umgebungsvariablen "DEBUG"
+debug = os.getenv("DEBUG")
 
 logger = logging.getLogger(__name__)
 
-
 # Verbindung zur OpenAI-API herstellen und ChatGPT-Modell angeben
-openai.api_key = "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"
+# Verwendet den Wert der Umgebungsvariablen "OPENAI_API_KEY"
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 model_engine = "chatgpt"
 
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
@@ -36,9 +45,9 @@ def chat(update, context):
     text = update.message.text
     response = generate_response(text)
     update.message.reply_text(response)
-    
+
 # Telegram-Bot starten und Nachrichten verarbeiten
-updater = Updater("5831906865:AAF3EXNMjLUt18ROpPKLIHv7xU8DctqrjMY", use_context=True)
+updater = Updater(os.getenv("TELEGRAM_TOKEN"), use_context=True)
 dispatcher = updater.dispatcher
 
 start_handler = CommandHandler("start", start)
