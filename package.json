@@ -1,7 +1,7 @@
 {
     "name": "phyton-chatgpt-telegram",
     "version": "0.1.0",
-    "private": true,
+    "private": false,
     "scripts": {
         "start": "python chatgpt_telegram.py",
         "test": "python -m unittest discover"
