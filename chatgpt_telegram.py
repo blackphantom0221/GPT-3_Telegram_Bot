@@ -1,10 +1,13 @@
 import openai
-import os
 import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 # Verbindung zur OpenAI-API herstellen und ChatGPT-Modell angeben
-openai.api_key = "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"
+openai.api_key = "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"
 model_engine = "chatgpt"
 
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
@@ -33,10 +36,6 @@ def chat(update, context):
     text = update.message.text
     response = generate_response(text)
     update.message.reply_text(response)
-
-def error(update, context):
-    """Log Errors caused by Updates."""
-    logger.warning('Update "%s" caused error "%s"', update, context.error)
     
 # Telegram-Bot starten und Nachrichten verarbeiten
 updater = Updater("5831906865:AAEhPBs9SoYTbNjUri2vop8I1rsI12skgOI", use_context=True)
@@ -47,6 +46,10 @@ dispatcher.add_handler(start_handler)
 
 chat_handler = MessageHandler(Filters.text, chat)
 dispatcher.add_handler(chat_handler)
+
+def error(update, context):
+    """Log Errors caused by Updates."""
+    logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 # Error-Handler hinzufügen
 dispatcher.add_error_handler(error)
