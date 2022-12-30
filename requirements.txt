@@ -4,7 +4,7 @@ certifi==2022.12.7
 charset-normalizer==2.1.1
 colorama==0.4.6
 et-xmlfile==1.1.0
-gunicorn==20.1.0
+gunicorn==19.8.
 idna==3.4
 numpy==1.21.1
 openai==0.25.0
