@@ -1,11 +1,6 @@
 {
     "version": 2,
-    "functions": {
-        "api/webhook.js": {
-            "runtime": "vercel-php@0.1.0"
-        }
-    },
-    "builds": [
+    "functions": [
         {
             "src": "chatgpt_telegram.py",
             "use": "@vercel/python"
