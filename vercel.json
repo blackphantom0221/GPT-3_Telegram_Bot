@@ -11,5 +11,10 @@
             "src": "/chatgpt_telegram.py",
             "dest": "chatgpt_telegram.py"
         }
-    ]
+    ],
+    "functions": {
+        "api/test.php": {
+            "runtime": "vercel-php@0.1.0"
+        }
+    }
 }
