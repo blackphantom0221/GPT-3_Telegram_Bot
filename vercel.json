@@ -1,9 +1,0 @@
-{
-    "version": 2,
-    "build": [
-        {
-            "src": "chatgpt_telegram.py",
-            "use": "@vercel/python"
-        }
-    ]
-}
