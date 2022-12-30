@@ -1,11 +1,9 @@
-from openai_functions import generate_response
-from telegram_functions import start, chat, error
 import os
 import logging
 import openai
-#import telegram #/ ausgelagert in telegram_function.py
+import telegram
 from dotenv import load_dotenv
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters #/ ausgelagert in telegram_function.py
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # Lädt die Umgebungsvariablen aus der .env-Datei
 load_dotenv()
@@ -22,35 +20,35 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 model_engine = "chatgpt"
 
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
-#def generate_response(text):
-#    prompt = (f"User: {text}\n"
-#             f"MicroBot: ")
-#    completions = openai.Completion.create(
-#        model="text-davinci-003",
-#        prompt=prompt,
-#        max_tokens=1024,
-#        n=1,
-#        stop=None,
-#        temperature=0.5,
-#        top_p=0.3,
-#        frequency_penalty=0.5,
-#        presence_penalty=0
-#    )
-#    message = completions.choices[0].text
-#    return message.strip()
+def generate_response(text):
+    prompt = (f"User: {text}\n"
+             f"MicroBot: ")
+    completions = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=prompt,
+        max_tokens=1024,
+        n=1,
+        stop=None,
+        temperature=0.5,
+        top_p=0.3,
+        frequency_penalty=0.5,
+        presence_penalty=0
+    )
+    message = completions.choices[0].text
+    return message.strip()
 
 # Funktionen für den Telegram-Chatbot
-#def start(update, context):
-#    update.message.reply_text("Hi, ich bin der Micro-ChatBot von DeepCore Developers integriert mit ChatGPT. Schreib mir eine Nachricht, und ich werde versuchen, dir zu antworten.")
+def start(update, context):
+    update.message.reply_text("Hi, ich bin der Micro-ChatBot von DeepCore Developers integriert mit ChatGPT. Schreib mir eine Nachricht, und ich werde versuchen, dir zu antworten.")
 
-#def chat(update, context):
-#    text = update.message.text
-#    response = generate_response(text)
-#    update.message.reply_text(response)
-#
-#def error(update, context):
-#    """Log Errors caused by Updates."""
-#    logger.warning('Update "%s" caused error "%s"', update, context.error)
+def chat(update, context):
+    text = update.message.text
+    response = generate_response(text)
+    update.message.reply_text(response)
+
+def error(update, context):
+    """Log Errors caused by Updates."""
+    logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 def main():
     # Telegram-Bot starten und Nachrichten verarbeiten
