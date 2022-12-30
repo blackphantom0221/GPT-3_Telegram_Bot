@@ -6,6 +6,9 @@ from openai_functions import generate_response
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from dotenv import load_dotenv
 
+# Lädt die Umgebungsvariablen aus der .env-Datei
+load_dotenv()
+
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 # Telegram-Bot starten und Nachrichten verarbeiten

@@ -1,4 +1,17 @@
+import logging
 import openai
+import os
+import telegram
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
+
+# Verbindung zur OpenAI-API herstellen und ChatGPT-Modell angeben
+# Verwendet den Wert der Umgebungsvariablen "OPENAI_API_KEY"
+openai.api_key = os.environ.get("OPENAI_API_KEY")
+
+model_engine = "chatgpt"
 
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
 def generate_response(text):
@@ -17,3 +30,34 @@ def generate_response(text):
     )
     message = completions.choices[0].text
     return message.strip()
+
+def main():
+    # Telegram-Bot starten und Nachrichten verarbeiten
+    token = os.environ.get("TELEGRAM_TOKEN")
+    if not token:
+        logger.error("TELEGRAM_TOKEN environment variable is not set")
+        return
+
+    updater = Updater(token, use_context=True)
+    dispatcher = updater.dispatcher
+
+    start_handler = CommandHandler("start", start)
+    dispatcher.add_handler(start_handler)
+
+    chat_handler = MessageHandler(Filters.text, chat)
+    dispatcher.add_handler(chat_handler)
+
+    # Error-Handler hinzufügen
+    dispatcher.add_error_handler(error)
+
+    try:
+        # Den Bot starten
+        updater.start_polling()
+
+        # Auf Cleanup-Interrupts reagieren (z.B. STRG+C oder SIGTERM)
+        updater.idle()
+    except Exception as e:
+        logger.exception("An error occurred: %s", e)
+
+if __name__ == "__main__":
+    main()
