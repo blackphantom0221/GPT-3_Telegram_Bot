@@ -29,7 +29,7 @@ def main():
     dispatcher.add_handler(start_handler)
     chat_handler = MessageHandler(Filters.text, chat)
     dispatcher.add_handler(chat_handler)
-    # Error-Handler hinzufügen
+    # Error-Handler hinzufügen 3e
     dispatcher.add_error_handler(error)
     try:
         # Den Bot starten
