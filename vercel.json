@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "builds": [
+    "build": [
         {
             "src": "chatgpt_telegram.py",
             "use": "@vercel/python"
