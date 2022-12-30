@@ -1,10 +1,13 @@
 {
     "name": "phyton-chatgpt-telegram",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "private": true,
     "scripts": {
-        "start": "python chatgpt_telegram.py",
-        "test": "python -m unittest discover"
+        "start-local": "python chatgpt_telegram.py",
+        "test": "python -m unittest discover",
+        "start": "next start",
+        "dev": "next",
+        "build": "next build"
     },
     "dependencies": {
         "next": "^13.1.1",
