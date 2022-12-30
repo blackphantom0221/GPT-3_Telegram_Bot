@@ -1,9 +1,11 @@
 {
     "version": 2,
-    "functions": {
-        "src": "chatgpt_telegram.py",
-        "use": "@vercel/python"
-    },
+    "builds": [
+        {
+            "src": "chatgpt_telegram.py",
+            "use": "@vercel/python"
+        }
+    ],
     "routes": [
         {
             "src": "/chatgpt_telegram.py",
