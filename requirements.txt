@@ -25,3 +25,5 @@ typing_extensions==4.4.0
 tzdata==2022.7
 tzlocal==4.2
 urllib3==1.26.13
+python-telegram-bot
+chatgpt
