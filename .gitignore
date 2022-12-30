@@ -2,3 +2,4 @@
 vendor
 node_modules
 test_chatGPT_telegram.py
+.vercel
