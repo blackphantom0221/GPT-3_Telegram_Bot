@@ -3,7 +3,7 @@
     "build": [
         {
             "src": "chatgpt_telegram.py",
-            "use": "@vercel/python"
+            "use": "@now/python"
         }
     ]
 }
