@@ -5,5 +5,11 @@
             "src": "chatgpt_telegram.py",
             "use": "@vercel/python"
         }
+    ],
+    "routes": [
+        {
+            "src": "/chatgpt_telegram.py",
+            "dest": "chatgpt_telegram.py"
+        }
     ]
 }
