@@ -24,8 +24,11 @@ To start chatting with ChatGPT, simply send it a message and it will respond wit
 4.  Open an PowerShell Terminal in your workspace folder and install NPM with "npm install"
 
 Now we need to install the following packages to us our bot!
+
 (+) openai
+
 (+) pytho-telegram-bot
+
 (+) python-dotenv
 
 6.  Open Terminal again and install [python-dotenv] with this command <pip install python-dotenv> 
