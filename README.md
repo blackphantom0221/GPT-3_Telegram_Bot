@@ -30,8 +30,8 @@ Now we need to install the following packages to us our bot!
 6.  Open Terminal again and install [python-dotenv] with this command <pip install python-dotenv> if you get errors you may try to upgrade your [python-dotenv] 
     with <pip install --upgrade python-dotenv> and this command <pip install --upgrade pip>
     "If it still doesn't work! Could it be that Python is not installed on your system or is not up to date? In that case, you need to install the latest version of Python. You can do this from here https://www.python.org/downloads/"
-7.  after that you need to install with this <pip install openai>   
-8.  Then you can install with the following command <pip install python-telegram-bot>
+7.  after that you need to install with this command "pip install openai"  
+8.  Then you can install with the following command <"pip install python-telegram-bot">
 
 
 ### Disclaimer
