@@ -5,7 +5,6 @@ import telegram
 from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-# Lädt die Umgebungsvariablen aus der .env-Datei
 load_dotenv()
 
 # Verwendet den Wert der Umgebungsvariablen "DEBUG"
