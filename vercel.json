@@ -1,15 +1,12 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "chatgpt_telegram.py",
-            "use": "@vercel/python"
+    "functions": {
+        "pages/api/index.js": {
+            "memory": 3008,
+            "maxDuration": 60
+        },
+        "pages/api/webook.js": {
+            "memory": 1024,
+            "maxDuration": 30
         }
-    ],
-    "routes": [
-        {
-            "src": "/chatgpt_telegram.py",
-            "dest": "chatgpt_telegram.py"
-        }
-    ]
+    }
 }
