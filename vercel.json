@@ -4,7 +4,7 @@
             "memory": 1024,
             "maxDuration": 10
         },
-        "pages/api/webook.js": {
+        "api/webook.js": {
             "memory": 1024,
             "maxDuration": 10
         }
