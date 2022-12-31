@@ -1,3 +1,3 @@
-const runPythonScript = require('./chatgpt_telegram.py');
+const runPythonScript = require('chatgpt_telegram.py');
 
 runPythonScript();
