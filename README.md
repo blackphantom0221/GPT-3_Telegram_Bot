@@ -27,7 +27,7 @@ Now we need to install the following packages to us our bot!
 
 (+) openai
 
-(+) pytho-telegram-bot
+(+) python-telegram-bot
 
 (+) python-dotenv
 
