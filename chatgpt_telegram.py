@@ -72,7 +72,6 @@ def main():
     try:
         # Den Bot starten
         updater.start_polling()
-
         # Auf Cleanup-Interrupts reagieren (z.B. STRG+C oder SIGTERM)
         updater.idle()
     except Exception as e:
