@@ -41,6 +41,10 @@ Now we need to install the following packages to us our bot!
 7.  After that you need to install with this command "pip install openai"  
 8.  Then you can install with the following command "pip install python-telegram-bot"
 
+## now run command " npm run start-local" to start the bot
+
+✌️😁
+
 ### Disclaimer
 Please note that ChatGPT is a chatbot and is not a human. Its responses are generated using advanced artificial intelligence algorithms, but it may not always produce responses that are accurate, appropriate, or sensitive to your individual circumstances. Use ChatGPT at your own risk, and always use common sense and good judgment when interacting with it or any other chatbot.
 ## License
