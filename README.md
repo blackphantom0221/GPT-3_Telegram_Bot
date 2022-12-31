@@ -1,5 +1,5 @@
 ```javascript
-def start(update, context): = "Phyton_ChatGPT_Bot-Telegramm"; 
+def start(update, context): = "Python_ChatGPT_Bot-Telegramm"; 
 updater.start_polling();
 ``` 
 ![alt text][logo] 
