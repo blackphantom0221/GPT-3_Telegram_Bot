@@ -67,7 +67,7 @@ Now we need to install the following packages to us our bot!
 
 2.  Followe this steps: Download my Repositori and upload to your GitHup make it <"Privat not Public">
 
-3.  open .gitignore and DELETE the first line ".env" if your not using Next.js / you 
+3.  open .gitignore and DELETE the first line ".env" if your not using Next.js / Vercel
 
 4.  Deploy to Heroku! 🎉🎉🎉
 
