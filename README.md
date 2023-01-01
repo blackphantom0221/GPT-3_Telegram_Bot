@@ -67,7 +67,9 @@ Now we need to install the following packages to us our bot!
 
 2.  Followe this steps: Download my Repositori and upload to your GitHup make it <"Privat not Public">
 
-3.  Deploy to Heroku! 🎉🎉🎉
+3.  open .gitignore and DELETE the first line ".env" if your not using Next.js / you 
+
+4.  Deploy to Heroku! 🎉🎉🎉
 
 Now your Bot is online and can be use in your Telegram Chat/Groups etc.
 
