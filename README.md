@@ -13,6 +13,17 @@ To use ChatGPT, you will need a Telegram account and the Telegram app (available
 
 To start chatting with ChatGPT, simply send it a message and it will respond with a generated response. You can ask ChatGPT questions, have a conversation with it, or just have fun chatting. ChatGPT is capable of understanding and responding to a wide variety of topics, so feel free to engage with it on any subject that interests you.
 
+First you need to go to / open your Telegram App/ and tip in the search bar "BotFather"
+1.  /newbot - reate a new bot
+    - then lets name your bot and and hit enter
+    - now we gotta choose a username for your bot. It must end with _bot like this "yourBotsName_bot"
+    - you created your first bot like a pro!
+2.  Now you can see your Access HTTP API TOKEN it looks like; "6241906262:OBGSO8Rpam1e8nx6_41ltzWsWj6mRWMRl92I"
+
+Now your ready: IMPORTEND! DO NOT SHARE YOUR TOKEN.
+
+The token should not be displayed anywhere publicly. Because Telegram and Openai rotate the token automatically for security reasons, so that the token is no longer accessible.
+
 ## Setup in VSCODE
 1.  Clone Repositori from given link
     https://github.com/DeepCoreB4/Phyton_ChatGPT_Bot-Telegramm
@@ -42,6 +53,23 @@ Now we need to install the following packages to us our bot!
 8.  Then you can install with the following command "pip install python-telegram-bot"
 
 ## now run command " npm run start-local" to start the bot
+
+# Hosting your ChatGPT-Telegram BOT to Heroku
+
+1. "I use Heroku to host the Telegram bot. 
+    I recommend this tutorial video if you don't know how to use Heroku
+
+    "Create a Telegram Bot and Deploy it to Heroku"
+
+    https://www.youtube.com/watch?v=-yWuLRJhoNI
+
+    To use automatic workers you have to pay 7Euro a month!"
+
+2.  Followe this steps: Download my Repositori and upload to your GitHup make it <"Privat not Public">
+
+3.  Deploy to Heroku! 🎉🎉🎉
+
+Now your Bot is online and can be use in your Telegram Chat/Groups etc.
 
 ✌️😁
 
