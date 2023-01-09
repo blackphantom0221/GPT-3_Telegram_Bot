@@ -22,7 +22,7 @@ model_engine = "chatgpt"
 
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
 def generate_response(text):
-    prompt = (f"User : {text}\n")
+    prompt = ("User : {text}\n")
     (f"MicroBot : ")
     completions = openai.Completion.create(
         model="text-davinci-003",
