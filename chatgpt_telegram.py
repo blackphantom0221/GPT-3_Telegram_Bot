@@ -18,10 +18,9 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 model_engine = "chatgpt"
 
-# Function used by ChatGPT to respond to a message  coding: utf-8
 def generate_response(text):
     prompt = (f"User : {text}\n")
-    (f"MicroBot : ")
+    prompt += "MicroBot : "
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
@@ -35,6 +34,7 @@ def generate_response(text):
     )
     message = completions.choices[0].text
     return message.strip()
+
 
 # Functions for the Telegram chatbot
 def start(update, context):
