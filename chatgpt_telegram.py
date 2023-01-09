@@ -21,6 +21,7 @@ model_engine = "chatgpt"
 start_sequence = "\nAI:"
 restart_sequence = "\nHuman: "
 
+# This Python file uses the following encoding: utf-8
 def generate_response(text):
     # Use the OpenAI API to generate a response
     completions = openai.Completion.create(
