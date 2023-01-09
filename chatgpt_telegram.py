@@ -13,7 +13,7 @@ debug = os.environ.get("DEBUG", False)
 logger = logging.getLogger(__name__)
 
 # Connects to the OpenAI API and specifies the ChatGPT model
-# Gets the value of the "OPENAI_API_KEY" environment variable # -*- coding: ascii -*-
+# Gets the value of the "OPENAI_API_KEY" environment variable # -*- coding: utf-8 -*-
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 model_engine = "chatgpt"
@@ -21,7 +21,7 @@ model_engine = "chatgpt"
 start_sequence = "\nAI:"
 restart_sequence = "\nHuman: "
 
-# This Python file uses the following encoding: utf-8
+# This Python file uses the following encoding: 
 def generate_response(text):
     # Use the OpenAI API to generate a response
     completions = openai.Completion.create(
