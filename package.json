@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "private": true,
     "scripts": {
-        "start-local": "python chatgpt_telegram.py",
+        "npm-run": "python chatgpt_telegram.py",
         "build": "next build",
         "test": "python -m unittest discover"
     },
