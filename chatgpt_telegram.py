@@ -1,4 +1,3 @@
-# coding: utf-8
 import os
 import logging
 import openai
@@ -19,7 +18,7 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 model_engine = "chatgpt"
 
-# Function used by ChatGPT to respond to a message
+# Function used by ChatGPT to respond to a message  coding: utf-8
 def generate_response(text):
     prompt = (f"User : {text}\n")
     (f"MicroBot : ")
