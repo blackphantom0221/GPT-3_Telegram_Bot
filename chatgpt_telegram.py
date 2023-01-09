@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: ascii -*-
+# This Python file uses the following encoding: utf-8
 import os, sys
 import logging
 import openai
