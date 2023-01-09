@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def generate_response(text):
-    prompt = f"User {text}\nMicroBot:",
+    prompt = f"User: {text}\nMicroBot: ",
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
