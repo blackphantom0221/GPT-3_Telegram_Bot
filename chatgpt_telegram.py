@@ -1,46 +1,41 @@
 import os
-import openai
 import logging
+import openai
 import telegram
 from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
+# Lädt die Umgebungsvariablen aus der .env-Datei
 load_dotenv()
-
-# Gets the value of the "DEBUG" environment variable
-debug = os.environ.get("DEBUG", False) 
-
+# Verwendet den Wert der Umgebungsvariablen "DEBUG"
+debug = os.environ.get("DEBUG", False)
 logger = logging.getLogger(__name__)
-
-# Connects to the OpenAI API and specifies the ChatGPT model
+# Verbindung zur OpenAI-API herstellen und ChatGPT-Modell angeben
+# Verwendet den Wert der Umgebungsvariablen "OPENAI_API_KEY"
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 model_engine = "chatgpt"
 
-start_sequence = "\nAI:"
-restart_sequence = "\nHuman: "
- 
+# Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
 def generate_response(text):
-    # Use the OpenAI API to generate a response
+    prompt = (f"User: {text}\n"
+             f"MicroBot: ")
     completions = openai.Completion.create(
         model="text-davinci-003",
-        prompt="The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: {Text}\nAI: I am an AI created by OpenAI. How can I help you today?",
-        temperature=0.9,
+        prompt=prompt,
         max_tokens=1024,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0.6,
-        stop=[" Human:", " AI:"]
-       )
-    # Get the first choice (which is the most likely response)
+        n=1,
+        stop=None,
+        temperature=0.5,
+        top_p=0.3,
+        frequency_penalty=0.5,
+        presence_penalty=0
+    )
     message = completions.choices[0].text
-
-    # Return the response text
     return message.strip()
 
-# Functions for the Telegram chatbot
+# Funktionen für den Telegram-Chatbot
 def start(update, context):
-    update.message.reply_text("Hi, I'm Micro-ChatBot from DeepCore Developers integrated with ChatGPT. Send me a message, and I'll try to respond.")
+    update.message.reply_text("Hi, ich bin der Micro-ChatBot von DeepCore Developers integriert mit ChatGPT. Schreib mir eine Nachricht, und ich werde versuchen, dir zu antworten.")
 
 def chat(update, context):
     text = update.message.text
@@ -67,12 +62,13 @@ def main():
     chat_handler = MessageHandler(Filters.text, chat)
     dispatcher.add_handler(chat_handler)
 
-
+    # Error-Handler hinzufügen
     dispatcher.add_error_handler(error)
 
     try:
         # Den Bot starten
         updater.start_polling()
+
         # Auf Cleanup-Interrupts reagieren (z.B. STRG+C oder SIGTERM)
         updater.idle()
     except Exception as e:
