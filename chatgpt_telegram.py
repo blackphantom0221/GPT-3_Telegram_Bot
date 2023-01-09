@@ -1,5 +1,7 @@
 import os
+import openai
 import logging
+import telegram
 from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -12,6 +14,8 @@ logger = logging.getLogger(__name__)
 
 # Connects to the OpenAI API and specifies the ChatGPT model
 openai.api_key = os.environ.get("OPENAI_API_KEY")
+
+model_engine = "chatgpt"
 
 start_sequence = "\nAI:"
 restart_sequence = "\nHuman: "
