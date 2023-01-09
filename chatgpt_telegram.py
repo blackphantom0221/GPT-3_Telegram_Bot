@@ -10,8 +10,7 @@ logger = logging.getLogger(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def generate_response(text):
-    prompt = (f"User: {text}\n"
-             f"MicroBot: ")
+    prompt="The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: {Text}\nAI: I am an AI created by OpenAI. How can I help you today?",
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
