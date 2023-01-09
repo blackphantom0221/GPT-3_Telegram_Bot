@@ -20,7 +20,7 @@ model_engine = "chatgpt"
 
 def generate_response(text):
     prompt = (f"User : {text}\n",
-    prompt += "MicroBot : ")
+    prompt + f"MicroBot : ")
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
