@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def generate_response(text):
-    prompt="",
+    prompt="hello world!",
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
