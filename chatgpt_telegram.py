@@ -1,5 +1,6 @@
-# This Python file uses the following encoding: utf-8
-import os
+#!/usr/bin/python
+# -*- coding: ascii -*-
+import os, sys
 import logging
 import openai
 import telegram
