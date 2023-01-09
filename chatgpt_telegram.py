@@ -9,9 +9,6 @@ debug = os.environ.get("DEBUG", False)
 logger = logging.getLogger(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
-start_sequence = "\nAI:"
-restart_sequence = "\nHuman: "
-
 def generate_response(text):
     prompt="",
     completions = openai.Completion.create(
