@@ -18,20 +18,21 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 model_engine = "chatgpt"
 
+start_sequence = "\nAI:"
+restart_sequence = "\nHuman: "
+
 def generate_response(text):
-    # Use an f-string to define the prompt text
-    prompt = f"'User: {text}\nMicroBot: '"
-    
     # Use the OpenAI API to generate a response
-    completions = openai.Completion.create(model="text-davinci-003",
-                                           prompt=prompt,
-                                           max_tokens=1024,
-                                           n=1,
-                                           stop=None,
-                                           temperature=0.5,
-                                           top_p=0.3,
-                                           frequency_penalty=0.5,
-                                           presence_penalty=0)
+    completions = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: {Text}\nAI: I am an AI created by OpenAI. How can I help you today?",
+        temperature=0.9,
+        max_tokens=1024,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0.6,
+        stop=[" Human:", " AI:"]
+       )
     # Get the first choice (which is the most likely response)
     message = completions.choices[0].text
 
