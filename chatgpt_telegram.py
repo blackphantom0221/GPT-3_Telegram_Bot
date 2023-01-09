@@ -9,8 +9,11 @@ debug = os.environ.get("DEBUG", False)
 logger = logging.getLogger(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
+start_sequence = "\nAI:"
+restart_sequence = "\nHuman: "
+
 def generate_response(text):
-    prompt="The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: {Text}\nAI: I am an AI created by OpenAI. How can I help you today?",
+    prompt="The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: tell me a joke\nAI: What did the fish say when it hit the wall? \"Dam!\"",
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
