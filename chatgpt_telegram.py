@@ -13,8 +13,6 @@ logger = logging.getLogger(__name__)
 # Verwendet den Wert der Umgebungsvariablen "OPENAI_API_KEY"
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
-model_engine = "chatgpt"
-
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
 def generate_response(text):
     prompt = (f"User: {text}\n"
