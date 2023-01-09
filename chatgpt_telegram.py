@@ -1,6 +1,6 @@
+import openai
 import os
 import logging
-import openai
 import telegram
 from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
