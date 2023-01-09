@@ -1,6 +1,5 @@
-#!/usr/bin/python
 # coding: utf-8
-import os, sys
+import os
 import logging
 import openai
 import telegram
@@ -9,21 +8,21 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 load_dotenv()
 
-# Verwendet den Wert der Umgebungsvariablen "DEBUG"
+# Gets the value of the "DEBUG" environment variable
 debug = os.environ.get("DEBUG", False) 
 
 logger = logging.getLogger(__name__)
 
-# Verbindung zur OpenAI-API herstellen und ChatGPT-Modell angeben
-# Verwendet den Wert der Umgebungsvariablen "OPENAI_API_KEY"
+# Connects to the OpenAI API and specifies the ChatGPT model
+# Gets the value of the "OPENAI_API_KEY" environment variable
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 model_engine = "chatgpt"
 
-# Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
+# Function used by ChatGPT to respond to a message
 def generate_response(text):
-    prompt = ("User : {text}\n")
-    ("MicroBot : ")
+    prompt = (f"User : {text}\n")
+    (f"MicroBot : ")
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
@@ -38,9 +37,9 @@ def generate_response(text):
     message = completions.choices[0].text
     return message.strip()
 
-# Funktionen für den Telegram-Chatbot
+# Functions for the Telegram chatbot
 def start(update, context):
-    update.message.reply_text("Hi, ich bin der Micro-ChatBot von DeepCore Developers integriert mit ChatGPT. Schreib mir eine Nachricht, und ich werde versuchen, dir zu antworten.")
+    update.message.reply_text("Hi, I'm Micro-ChatBot from DeepCore Developers integrated with ChatGPT. Send me a message, and I'll try to respond.")
 
 def chat(update, context):
     text = update.message.text
