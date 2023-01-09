@@ -1,5 +1,5 @@
-import openai
 import os
+import openai
 import logging
 import telegram
 from dotenv import load_dotenv
