@@ -19,8 +19,8 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 model_engine = "chatgpt"
 
 def generate_response(text):
-    prompt = (f"User : {text}\n",
-    prompt = f"MicroBot : ")
+    prompt = (f"User : {text}\n")
+    prompt = (f"MicroBot : ")
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
