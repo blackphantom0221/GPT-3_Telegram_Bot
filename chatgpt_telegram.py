@@ -69,7 +69,7 @@ def main():
     chat_handler = MessageHandler(Filters.text, chat)
     dispatcher.add_handler(chat_handler)
 
-    # Error-Handler hinzufügen
+
     dispatcher.add_error_handler(error)
 
     try:
