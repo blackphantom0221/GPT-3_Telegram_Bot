@@ -4,6 +4,7 @@
     "private": true,
     "scripts": {
         "start-local": "python chatgpt_telegram.py",
+        "build": "next build",
         "test": "python -m unittest discover"
     },
     "dependencies": {
