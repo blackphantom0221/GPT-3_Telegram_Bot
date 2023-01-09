@@ -9,7 +9,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 load_dotenv()
 
 # Verwendet den Wert der Umgebungsvariablen "DEBUG"
-debug = os.environ.get("DEBUG", False)
+debug = os.environ.get("DEBUG", False) 
 
 logger = logging.getLogger(__name__)
 
