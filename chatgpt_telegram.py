@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 # Verbindung zur OpenAI-API herstellen und ChatGPT-Modell angeben
 # Verwendet den Wert der Umgebungsvariablen "OPENAI_API_KEY"
 openai.api_key = os.environ.get("OPENAI_API_KEY")
-
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
 def generate_response(text):
     prompt = (f"User: {text}\n"
@@ -30,7 +29,6 @@ def generate_response(text):
     )
     message = completions.choices[0].text
     return message.strip()
-
 # Funktionen für den Telegram-Chatbot
 def start(update, context):
     update.message.reply_text("Hi, ich bin der Micro-ChatBot von DeepCore Developers integriert mit ChatGPT. Schreib mir eine Nachricht, und ich werde versuchen, dir zu antworten.")
