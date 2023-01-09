@@ -4,14 +4,15 @@ import openai
 import telegram
 from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+
 load_dotenv()
 debug = os.environ.get("DEBUG", False)
 logger = logging.getLogger(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
-
 def generate_response(text):
-    prompt="hello world!",
+    prompt = (f"User: {text}"\n,
+             f"MicroBot: ")
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
