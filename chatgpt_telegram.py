@@ -20,7 +20,7 @@ model_engine = "chatgpt"
 
 def generate_response(text):
     # Use an f-string to define the prompt text
-    prompt = f'User: {text}\nMicroBot: '
+    prompt = f"User: {text}\nMicroBot: "
     
     # Use the OpenAI API to generate a response
     completions = openai.Completion.create(model="text-davinci-003",
