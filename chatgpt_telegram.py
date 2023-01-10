@@ -12,8 +12,8 @@ logger = logging.getLogger(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
 def generate_response(text):
-        prompt = f"User:{text}\n",
-        prompt = (f'MicroBot: '), 
+        prompt = (f"User":"{text}\n",
+                 f"MicroBot": "\n"), 
     completions = openai.Completion.create(model="text-davinci-003",
                                            prompt=prompt,
                                            max_tokens=1024,
