@@ -4,13 +4,11 @@ import openai
 import telegram
 from dotenv import load_dotenv
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-# Lädt die Umgebungsvariablen aus der .env-Datei
 load_dotenv()
 # Verwendet den Wert der Umgebungsvariablen "DEBUG"
 debug = os.environ.get("DEBUG", False)
 logger = logging.getLogger(__name__)
 # Verbindung zur OpenAI-API herstellen und ChatGPT-Modell angeben
-# Verwendet den Wert der Umgebungsvariablen "OPENAI_API_KEY"
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 # Funktion, die ChatGPT verwendet, um auf eine Nachricht zu antworten
 def generate_response(text):
